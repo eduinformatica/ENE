@@ -16,5 +16,13 @@ namespace ENE
         {
             InitializeComponent();
         }
+
+        private void btnListRequerimiento_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            
+            ListaDeRequerimientos frmListaDeRequerimiento = new ListaDeRequerimientos();
+            frmListaDeRequerimiento.ShowDialog();
+        }
     }
 }

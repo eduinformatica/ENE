@@ -33,16 +33,16 @@ namespace ENE
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxRequerimientos = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txaDescripcionRequerimiento = new System.Windows.Forms.TextBox();
+            this.cbxAsignacion = new System.Windows.Forms.ComboBox();
             this.lblLineaForTitle = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cbxPrioridad = new System.Windows.Forms.ComboBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnClearCampos = new System.Windows.Forms.Button();
+            this.btnListRequerimiento = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -79,13 +79,13 @@ namespace ENE
             this.label3.TabIndex = 2;
             this.label3.Text = "Asignado a:";
             // 
-            // comboBox1
+            // cbxRequerimientos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(206, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbxRequerimientos.FormattingEnabled = true;
+            this.cbxRequerimientos.Location = new System.Drawing.Point(206, 85);
+            this.cbxRequerimientos.Name = "cbxRequerimientos";
+            this.cbxRequerimientos.Size = new System.Drawing.Size(212, 21);
+            this.cbxRequerimientos.TabIndex = 3;
             // 
             // label4
             // 
@@ -97,21 +97,21 @@ namespace ENE
             this.label4.TabIndex = 4;
             this.label4.Text = "Descripcion del Requerimiento:";
             // 
-            // textBox1
+            // txaDescripcionRequerimiento
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 225);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(368, 84);
-            this.textBox1.TabIndex = 5;
+            this.txaDescripcionRequerimiento.Location = new System.Drawing.Point(50, 225);
+            this.txaDescripcionRequerimiento.Multiline = true;
+            this.txaDescripcionRequerimiento.Name = "txaDescripcionRequerimiento";
+            this.txaDescripcionRequerimiento.Size = new System.Drawing.Size(368, 84);
+            this.txaDescripcionRequerimiento.TabIndex = 5;
             // 
-            // comboBox2
+            // cbxAsignacion
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(206, 139);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(212, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbxAsignacion.FormattingEnabled = true;
+            this.cbxAsignacion.Location = new System.Drawing.Point(206, 139);
+            this.cbxAsignacion.Name = "cbxAsignacion";
+            this.cbxAsignacion.Size = new System.Drawing.Size(212, 21);
+            this.cbxAsignacion.TabIndex = 6;
             // 
             // lblLineaForTitle
             // 
@@ -132,43 +132,44 @@ namespace ENE
             this.label5.TabIndex = 8;
             this.label5.Text = "Prioridad:";
             // 
-            // comboBox3
+            // cbxPrioridad
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(206, 315);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(212, 21);
-            this.comboBox3.TabIndex = 9;
+            this.cbxPrioridad.FormattingEnabled = true;
+            this.cbxPrioridad.Location = new System.Drawing.Point(206, 315);
+            this.cbxPrioridad.Name = "cbxPrioridad";
+            this.cbxPrioridad.Size = new System.Drawing.Size(212, 21);
+            this.cbxPrioridad.TabIndex = 9;
             // 
-            // button1
+            // btnGuardar
             // 
-            this.button1.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(12, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 37);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 379);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(130, 37);
+            this.btnGuardar.TabIndex = 10;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnClearCampos
             // 
-            this.button2.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(165, 379);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 37);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Limpiar Campos";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClearCampos.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
+            this.btnClearCampos.Location = new System.Drawing.Point(165, 379);
+            this.btnClearCampos.Name = "btnClearCampos";
+            this.btnClearCampos.Size = new System.Drawing.Size(173, 37);
+            this.btnClearCampos.TabIndex = 11;
+            this.btnClearCampos.Text = "Limpiar Campos";
+            this.btnClearCampos.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnListRequerimiento
             // 
-            this.button3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(360, 379);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(243, 37);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Ir a Listar Requerimientos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnListRequerimiento.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListRequerimiento.Location = new System.Drawing.Point(360, 379);
+            this.btnListRequerimiento.Name = "btnListRequerimiento";
+            this.btnListRequerimiento.Size = new System.Drawing.Size(243, 37);
+            this.btnListRequerimiento.TabIndex = 12;
+            this.btnListRequerimiento.Text = "Ir a Listar Requerimientos";
+            this.btnListRequerimiento.UseVisualStyleBackColor = true;
+            this.btnListRequerimiento.Click += new System.EventHandler(this.btnListRequerimiento_Click);
             // 
             // label6
             // 
@@ -205,16 +206,16 @@ namespace ENE
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.btnListRequerimiento);
+            this.Controls.Add(this.btnClearCampos);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.cbxPrioridad);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblLineaForTitle);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbxAsignacion);
+            this.Controls.Add(this.txaDescripcionRequerimiento);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxRequerimientos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -232,16 +233,16 @@ namespace ENE
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxRequerimientos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txaDescripcionRequerimiento;
+        private System.Windows.Forms.ComboBox cbxAsignacion;
         private System.Windows.Forms.Label lblLineaForTitle;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbxPrioridad;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnClearCampos;
+        private System.Windows.Forms.Button btnListRequerimiento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

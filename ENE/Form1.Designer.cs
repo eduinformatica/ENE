@@ -88,6 +88,8 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnIngresar.FlatAppearance.BorderSize = 14;
             this.btnIngresar.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(98, 145);
             this.btnIngresar.Name = "btnIngresar";

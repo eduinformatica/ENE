@@ -20,24 +20,10 @@ namespace ENE
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            String inpUsuario = "dgomez";
-            String inpClave = "123456";
+            this.Hide();
 
-            if (!txtUsuario.Text.Equals("") && !txtPassword.Text.Equals(""))
-            {
-                if (txtUsuario.Text.Equals(inpUsuario) && txtPassword.Text.Equals(inpClave))
-                {
-                    btnIngresar.Text = "Ingresando...";
-                }
-                else
-                {
-                    MessageBox.Show("!!Usuario y Contraseñas Incorrectas", "ENE - INSTITUTO AIEP", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("** Todos los campos deben ser llenados", "ENE - INSTITUTO AIEP", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            }
+            RegistroRequerimiento frmRegistroRequerimiento = new RegistroRequerimiento();
+            frmRegistroRequerimiento.ShowDialog();
         }
     }
 
