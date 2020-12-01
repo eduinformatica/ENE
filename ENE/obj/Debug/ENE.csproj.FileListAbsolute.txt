@@ -20,3 +20,4 @@ C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Program
 C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.pdb
 C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.RegistroRequerimiento.resources
 C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.ListaDeRequerimientos.resources
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.Login.resources
