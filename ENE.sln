@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ENE", "ENE\ENE.csproj", "{92260547-6EB6-45C4-BDC3-BDE3E9FDDB42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaPresentacion", "ENE\CapaPresentacion.csproj", "{92260547-6EB6-45C4-BDC3-BDE3E9FDDB42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLogica\CapaLogica.csproj", "{DAE9C0E8-3D06-475D-9B86-ECBDBCEBC8EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{92260547-6EB6-45C4-BDC3-BDE3E9FDDB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92260547-6EB6-45C4-BDC3-BDE3E9FDDB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92260547-6EB6-45C4-BDC3-BDE3E9FDDB42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE9C0E8-3D06-475D-9B86-ECBDBCEBC8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE9C0E8-3D06-475D-9B86-ECBDBCEBC8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE9C0E8-3D06-475D-9B86-ECBDBCEBC8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE9C0E8-3D06-475D-9B86-ECBDBCEBC8EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
