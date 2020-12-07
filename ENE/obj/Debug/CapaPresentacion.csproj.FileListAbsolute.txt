@@ -1,0 +1,12 @@
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\bin\Debug\ENE.exe.config
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\bin\Debug\ENE.exe
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\bin\Debug\ENE.pdb
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\CapaPresentacion.csprojAssemblyReference.cache
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.Login.resources
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.ListaDeRequerimientos.resources
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.Properties.Resources.resources
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.RegistroRequerimiento.resources
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.exe
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\ENE\obj\Debug\ENE.pdb
