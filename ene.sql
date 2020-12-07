@@ -1,4 +1,7 @@
 --CREATE DATABASE ene;
+IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='ene')
+	CREATE DATABASE ene; 
+GO;
 USE ene;
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='perfil')
@@ -15,7 +18,7 @@ IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='prioridad')
 	);
 GO
 
-IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='tipoRequermiento')
+IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='tipoRequerimiento')
 	CREATE TABLE tipoRequerimiento(idtipoRequerimiento INT IDENTITY(1,1) NOT NULL,
 		nombre VARCHAR(20) NOT NULL,
 		CONSTRAINT pk_idtipoRequerimiento PRIMARY KEY(idtipoRequerimiento)
@@ -60,3 +63,40 @@ IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='requerimiento')
 		CONSTRAINT fk_idtipoRequerimiento FOREIGN KEY(tipoRequerimiento_idtipoRequerimiento) REFERENCES tipoRequerimiento(idtipoRequerimiento)
 	);
 GO
+
+
+/*-- Add insert data registrer (NORMAL / PROCEDIMIENTOS ALMACENADOS) --*/
+--INSERT INTO dbo.perfil(nombrePerfil) VALUES('administrador'),('usuario');
+--SELECT * FROM ene.dbo.perfil;
+
+--INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('alta'),('media'),('baja');
+--SELECT * FROM ene.dbo.prioridad;
+
+--INSERT INTO dbo.tipoRequerimiento(nombre)
+--	VALUES('Base de Datos'), ('Sistemas'), ('Servidores'), ('Contabilidad'), ('Recurso Humano (RRHH)'),
+--		('Aranceles'), ('Crear Profesionales'), ('Crear Procedimientos'), ('Crear Usuarios'), ('Redes');
+--SELECT * FROM ene.dbo.tipoRequerimiento;
+
+/*-- Eliminamos los procedimientos si es que existen --*/
+IF OBJECT_ID('sp_insertProfile') IS NOT NULL
+BEGIN
+	DROP PROCEDURE sp_insertProfile
+END
+GO
+CREATE PROCEDURE sp_insertProfile
+@nombrePerfil AS VARCHAR(20)
+AS
+BEGIN
+	INSERT INTO ene.dbo.perfil(nombrePerfil) 
+	VALUES (@nombrePerfil)
+END
+GO
+
+--sp_insertProfile 'usuario'; -- (administrador, usuario)
+SELECT * FROM ene.dbo.perfil;
+/*-- Elimina los datos, pero no resetean el orden de los ingresos, empieza el ingreso desde el ultimo numero de registro --*/
+--DELETE FROM ene.dbo.perfil;
+/*-- Elimina los datos, reseteando el orden de los ingresos. --*/
+--DELETE FROM ene.dbo.perfil DBCC CHECKIDENT ('ene.dbo.perfil',RESEED, 0)
+
+SELECT NEWID() AS 'CodeID [MySQL UUID()]'
