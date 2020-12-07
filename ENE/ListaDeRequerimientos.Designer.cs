@@ -93,6 +93,8 @@ namespace ENE
             // 
             // cbxReadRequerimiento
             // 
+            this.cbxReadRequerimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxReadRequerimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxReadRequerimiento.FormattingEnabled = true;
             this.cbxReadRequerimiento.Location = new System.Drawing.Point(198, 82);
             this.cbxReadRequerimiento.Name = "cbxReadRequerimiento";
@@ -101,6 +103,8 @@ namespace ENE
             // 
             // cbxReadPrioridad
             // 
+            this.cbxReadPrioridad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxReadPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxReadPrioridad.FormattingEnabled = true;
             this.cbxReadPrioridad.Location = new System.Drawing.Point(198, 116);
             this.cbxReadPrioridad.Name = "cbxReadPrioridad";
@@ -110,6 +114,7 @@ namespace ENE
             // chckBoxPendientes
             // 
             this.chckBoxPendientes.AutoSize = true;
+            this.chckBoxPendientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckBoxPendientes.Location = new System.Drawing.Point(198, 157);
             this.chckBoxPendientes.Name = "chckBoxPendientes";
             this.chckBoxPendientes.Size = new System.Drawing.Size(15, 14);
@@ -129,6 +134,7 @@ namespace ENE
             // chckBoxResueltos
             // 
             this.chckBoxResueltos.AutoSize = true;
+            this.chckBoxResueltos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckBoxResueltos.Location = new System.Drawing.Point(388, 156);
             this.chckBoxResueltos.Name = "chckBoxResueltos";
             this.chckBoxResueltos.Size = new System.Drawing.Size(15, 14);
@@ -137,6 +143,7 @@ namespace ENE
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.Location = new System.Drawing.Point(508, 146);
             this.btnBuscar.Name = "btnBuscar";
@@ -187,6 +194,7 @@ namespace ENE
             // 
             // btnCheckResuelto
             // 
+            this.btnCheckResuelto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckResuelto.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnCheckResuelto.Location = new System.Drawing.Point(27, 360);
             this.btnCheckResuelto.Name = "btnCheckResuelto";
@@ -197,6 +205,7 @@ namespace ENE
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Location = new System.Drawing.Point(290, 360);
             this.btnEliminar.Name = "btnEliminar";
@@ -235,7 +244,8 @@ namespace ENE
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaDeRequerimientos";
-            this.Text = "Lista De Requerimientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Lista Requerimientos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

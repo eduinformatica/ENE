@@ -81,6 +81,8 @@ namespace ENE
             // 
             // cbxRequerimientos
             // 
+            this.cbxRequerimientos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxRequerimientos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRequerimientos.FormattingEnabled = true;
             this.cbxRequerimientos.Location = new System.Drawing.Point(206, 85);
             this.cbxRequerimientos.Name = "cbxRequerimientos";
@@ -102,11 +104,13 @@ namespace ENE
             this.txaDescripcionRequerimiento.Location = new System.Drawing.Point(50, 225);
             this.txaDescripcionRequerimiento.Multiline = true;
             this.txaDescripcionRequerimiento.Name = "txaDescripcionRequerimiento";
-            this.txaDescripcionRequerimiento.Size = new System.Drawing.Size(368, 84);
+            this.txaDescripcionRequerimiento.Size = new System.Drawing.Size(416, 84);
             this.txaDescripcionRequerimiento.TabIndex = 5;
             // 
             // cbxAsignacion
             // 
+            this.cbxAsignacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxAsignacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAsignacion.FormattingEnabled = true;
             this.cbxAsignacion.Location = new System.Drawing.Point(206, 139);
             this.cbxAsignacion.Name = "cbxAsignacion";
@@ -134,6 +138,8 @@ namespace ENE
             // 
             // cbxPrioridad
             // 
+            this.cbxPrioridad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPrioridad.FormattingEnabled = true;
             this.cbxPrioridad.Location = new System.Drawing.Point(206, 315);
             this.cbxPrioridad.Name = "cbxPrioridad";
@@ -142,6 +148,7 @@ namespace ENE
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.Location = new System.Drawing.Point(12, 379);
             this.btnGuardar.Name = "btnGuardar";
@@ -152,6 +159,7 @@ namespace ENE
             // 
             // btnClearCampos
             // 
+            this.btnClearCampos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearCampos.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold);
             this.btnClearCampos.Location = new System.Drawing.Point(165, 379);
             this.btnClearCampos.Name = "btnClearCampos";
@@ -162,6 +170,7 @@ namespace ENE
             // 
             // btnListRequerimiento
             // 
+            this.btnListRequerimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListRequerimiento.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListRequerimiento.Location = new System.Drawing.Point(360, 379);
             this.btnListRequerimiento.Name = "btnListRequerimiento";
@@ -222,7 +231,8 @@ namespace ENE
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RegistroRequerimiento";
-            this.Text = "Registro Requerimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Registro Requerimientos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
