@@ -91,6 +91,7 @@ BEGIN
 	VALUES (@nombrePerfil)
 END
 GO
+sp_helptext sp_insertProfile; -- ver la sintaxis del procedimiento almacenado
 
 --sp_insertProfile 'usuario'; -- (administrador, usuario)
 SELECT * FROM ene.dbo.perfil;
