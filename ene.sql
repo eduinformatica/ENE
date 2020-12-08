@@ -1,7 +1,15 @@
+/*-- Elimina los datos, pero no resetean el orden de los ingresos, empieza el ingreso desde el ultimo numero de registro --*/
+--DELETE FROM ene.dbo.perfil;
+
+/*-- Elimina los datos, reseteando el orden de los ingresos. (TRUNCATE) --*/
+--DELETE FROM ene.dbo.usuario DBCC CHECKIDENT ('ene.dbo.usuario',RESEED, 0) 
+
+--SELECT NEWID() AS 'CodeID [MySQL UUID()]'
+
 --CREATE DATABASE ene;
-IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='ene')
-	CREATE DATABASE ene; 
-GO;
+--IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='ene')
+--	CREATE DATABASE ene; 
+--GO;
 USE ene;
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='perfil')
@@ -20,7 +28,7 @@ GO
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='tipoRequerimiento')
 	CREATE TABLE tipoRequerimiento(idtipoRequerimiento INT IDENTITY(1,1) NOT NULL,
-		nombre VARCHAR(20) NOT NULL,
+		nombre VARCHAR(100) NOT NULL,
 		CONSTRAINT pk_idtipoRequerimiento PRIMARY KEY(idtipoRequerimiento)
 	);
 GO
@@ -38,7 +46,7 @@ IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='usuario')
 		nombres VARCHAR(30) NOT NULL,
 		apaterno VARCHAR(30) NOT NULL,
 		amaterno VARCHAR(30) NOT NULL,
-		clave VARCHAR(255) NOT NULL,
+		clave VARBINARY(MAX) NOT NULL,
 		perfil_idperfil INT NOT NULL
 		CONSTRAINT pk_idusuario PRIMARY KEY(idusuario),
 		CONSTRAINT fk_idperfil FOREIGN KEY(perfil_idperfil) REFERENCES perfil(idperfil)
@@ -66,38 +74,55 @@ GO
 
 
 /*-- Add insert data registrer (NORMAL / PROCEDIMIENTOS ALMACENADOS) --*/
---INSERT INTO dbo.perfil(nombrePerfil) VALUES('administrador'),('usuario');
---SELECT * FROM ene.dbo.perfil;
-
---INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('alta'),('media'),('baja');
---SELECT * FROM ene.dbo.prioridad;
-
---INSERT INTO dbo.tipoRequerimiento(nombre)
---	VALUES('Base de Datos'), ('Sistemas'), ('Servidores'), ('Contabilidad'), ('Recurso Humano (RRHH)'),
---		('Aranceles'), ('Crear Profesionales'), ('Crear Procedimientos'), ('Crear Usuarios'), ('Redes');
---SELECT * FROM ene.dbo.tipoRequerimiento;
-
-/*-- Eliminamos los procedimientos si es que existen --*/
-IF OBJECT_ID('sp_insertProfile') IS NOT NULL
-BEGIN
-	DROP PROCEDURE sp_insertProfile
-END
-GO
-CREATE PROCEDURE sp_insertProfile
-@nombrePerfil AS VARCHAR(20)
-AS
-BEGIN
-	INSERT INTO ene.dbo.perfil(nombrePerfil) 
-	VALUES (@nombrePerfil)
-END
-GO
-sp_helptext sp_insertProfile; -- ver la sintaxis del procedimiento almacenado
-
---sp_insertProfile 'usuario'; -- (administrador, usuario)
+INSERT INTO dbo.perfil(nombrePerfil) VALUES('administrador'),('usuario');
 SELECT * FROM ene.dbo.perfil;
-/*-- Elimina los datos, pero no resetean el orden de los ingresos, empieza el ingreso desde el ultimo numero de registro --*/
---DELETE FROM ene.dbo.perfil;
-/*-- Elimina los datos, reseteando el orden de los ingresos. --*/
---DELETE FROM ene.dbo.perfil DBCC CHECKIDENT ('ene.dbo.perfil',RESEED, 0)
 
-SELECT NEWID() AS 'CodeID [MySQL UUID()]'
+INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('alta'),('media'),('baja');
+SELECT * FROM ene.dbo.prioridad;
+
+INSERT INTO dbo.tipoRequerimiento(nombre)
+	VALUES('Base de Datos'), ('Sistemas'), ('Servidores'), ('Contabilidad'), ('Redes');
+SELECT * FROM ene.dbo.tipoRequerimiento;
+
+INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
+	VALUES('18533984K', 'Daniel', 'Gomez', 'Gomez', CONVERT(VARBINARY, 'daniel93'), 2),
+			('79771856', 'Victor', 'Sanchez', 'Hugo', CONVERT(VARBINARY, 'vitoco93'), 1);
+SELECT * FROM ene.dbo.usuario;
+
+SELECT u.idusuario AS "#", u.rut, CONCAT_WS(' ', u.nombres, u.apaterno, u.amaterno) AS "usuario", u.clave, p.nombrePerfil as "perfil"
+FROM ene.dbo.usuario u
+INNER JOIN ene.dbo.perfil p ON p.idperfil = u.perfil_idperfil
+ORDER BY u.nombres ASC;
+
+
+
+
+--CREATE PROCEDURE SesionInit 
+--	@rut VARCHAR(20),
+--	@clave VARCHAR(MAX),
+--	@sms VARCHAR(100) OUT,
+--	@idperfil VARCHAR(5) OUT,
+--	@idusuario VARCHAR(5) OUT
+--AS
+--BEGIN
+--	DECLARE @a VARCHAR(50)
+--	DECLARE @b VARCHAR(50)
+
+--	SET @a = (SELECT u.rut FROM usuario u WHERE u.rut = @rut)
+--	SET @b = (SELECT CONVERT(VARCHAR, clave) FROM usuario u WHERE u.rut = @rut)
+--	SET @idperfil = (SELECT u.perfil_idperfil FROM usuario u WHERE u.rut = @rut)
+--	SET @idusuario = (SELECT u.idusuario FROM usuario u WHERE u.rut = @rut)
+	
+--	IF (@a=@rut AND @clave=@b)
+--		BEGIN
+--			SET @sms = (SELECT CONCAT_WS(' ', u.nombres, u.apaterno, u.amaterno) FROM usuario u WHERE u.rut=@rut)
+--			PRINT @sms
+--		END
+--	ELSE
+--		BEGIN
+--			SET @sms = 'Usuario y contraseña no válido'
+--			PRINT @sms
+--		END
+--END 
+--sp_helptext SesionInit 
+execute SesionInit '79771856','vitoco93','','','';
