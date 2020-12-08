@@ -38,7 +38,6 @@ namespace CapaNegocio
             this.directionParameter = ParameterDirection.Output;
         }
 
-        // Otros
         public Parametros(String vName, Object vValue, SqlDbType typeOfData, ParameterDirection Direccion, int vSize)
         {
             this.vName = vName;

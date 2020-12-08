@@ -73,7 +73,7 @@ namespace CapaNegocio
 
             }
             catch (Exception ex) {
-                MessageBox.Show("Error: "+ex, "!Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: "+ex.Message, "!Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw ex;
             }
             CloseConexion();
@@ -103,7 +103,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex, "!Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "!Aviso importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return dt;

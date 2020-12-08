@@ -1,0 +1,6 @@
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\ites_\OneDrive\Escritorio\INST. RAMOS AIEP\2 Semestre\Taller de Programacion\Evaluaciones\EVA (ENE Rubro Sanitario)\ENE\CapaNegocio\obj\Debug\CapaNegocio.pdb

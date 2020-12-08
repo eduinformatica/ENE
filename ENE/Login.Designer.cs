@@ -32,7 +32,7 @@
             this.lblTitleAutentificacion = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtRut = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.lblLineaForTitle = new System.Windows.Forms.Label();
@@ -69,13 +69,14 @@
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password:";
             // 
-            // txtUsuario
+            // txtRut
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(118, 72);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(179, 23);
-            this.txtUsuario.TabIndex = 3;
+            this.txtRut.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRut.Location = new System.Drawing.Point(118, 72);
+            this.txtRut.Name = "txtRut";
+            this.txtRut.Size = new System.Drawing.Size(179, 23);
+            this.txtRut.TabIndex = 3;
+            this.txtRut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRut_KeyPress);
             // 
             // txtPassword
             // 
@@ -115,7 +116,7 @@
             this.Controls.Add(this.lblLineaForTitle);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtRut);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblTitleAutentificacion);
@@ -136,7 +137,7 @@
         private System.Windows.Forms.Label lblTitleAutentificacion;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtRut;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label lblLineaForTitle;

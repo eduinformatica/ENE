@@ -23,31 +23,35 @@ namespace CapaLogica
 
 
         #region Metodos y Funciones
-        public String SesionInit() {
-            List<Parametros> lst = new List<Parametros>();
+        //Metodo para iniciar sesion
+        public String Authentication() {
+            List<Parametros> list = new List<Parametros>();
             String vMessage = "";
             String vProfile = "";
             String vUsuario = "";
 
             try
             {
-                lst.Add(new Parametros("@rut", rut));
-                lst.Add(new Parametros("@clave", clave));
-
-                lst.Add(new Parametros("@sms", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
-                lst.Add(new Parametros("@idperfil", "", SqlDbType.VarChar, ParameterDirection.Output, 5));
-                lst.Add(new Parametros("@isUsuario", "", SqlDbType.VarChar, ParameterDirection.Output, 5));
-                manejador.ExecuteStoredProcedure("SesionInit", lst);
-                vMessage = lst[2].vValue.ToString();
-                vProfile = lst[3].vValue.ToString();
-                vUsuario = lst[4].vValue.ToString();
+                //Parametros de entrada, que recoje del formulario login para iniciar sesion
+                list.Add(new Parametros("@rut", rut));
+                list.Add(new Parametros("@clave", clave));
+                
+                //Parametros de salida, del procedimiento almecenado del SQLServer
+                list.Add(new Parametros("@sms", "", SqlDbType.VarChar, ParameterDirection.Output, 100));
+                list.Add(new Parametros("@idperfil", "", SqlDbType.VarChar, ParameterDirection.Output, 5));
+                list.Add(new Parametros("@idusuario", "", SqlDbType.VarChar, ParameterDirection.Output, 5));
+                manejador.ExecuteStoredProcedure("SesionInit", list);
+                vMessage = list[2].vValue.ToString();
+                vProfile = list[3].vValue.ToString();
+                vUsuario = list[4].vValue.ToString();
 
                 return $"{vMessage}&{vProfile}&{vUsuario}";
             }
             catch (Exception ex)
             {
                 vMessage = ex.Message;
-                return "";
+                //return "";
+                return vMessage;
             }
 
         }
