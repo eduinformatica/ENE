@@ -42,7 +42,7 @@ GO
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='usuario')
 	CREATE TABLE usuario(idusuario INT IDENTITY(1,1) NOT NULL,
-		rut VARCHAR(20) NOT NULL,
+		rut VARCHAR(20) NOT NULL UNIQUE,
 		nombres VARCHAR(30) NOT NULL,
 		apaterno VARCHAR(30) NOT NULL,
 		amaterno VARCHAR(30) NOT NULL,
@@ -74,10 +74,10 @@ GO
 
 
 /*-- Add insert data registrer (NORMAL / PROCEDIMIENTOS ALMACENADOS) --*/
-INSERT INTO dbo.perfil(nombrePerfil) VALUES('administrador'),('usuario');
+INSERT INTO dbo.perfil(nombrePerfil) VALUES('Administrador'),('Usuario');
 SELECT * FROM ene.dbo.perfil;
 
-INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('alta'),('media'),('baja');
+INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('Alta'),('Media'),('Baja');
 SELECT * FROM ene.dbo.prioridad;
 
 INSERT INTO dbo.tipoRequerimiento(nombre)
@@ -85,8 +85,10 @@ INSERT INTO dbo.tipoRequerimiento(nombre)
 SELECT * FROM ene.dbo.tipoRequerimiento;
 
 INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
-	VALUES('18533984K', 'Daniel', 'Gomez', 'Gomez', CONVERT(VARBINARY, 'daniel93'), 2),
-			('79771856', 'Victor', 'Sanchez', 'Hugo', CONVERT(VARBINARY, 'vitoco93'), 1);
+	VALUES('18533984K', 'Daniel', 'Gomez', 'Gomez', CONVERT(VARBINARY, 'daniel93'), 2);
+INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
+	VALUES('79771856', 'Victor', 'Sanchez', 'Hugo', CONVERT(VARBINARY, 'vitoco93'), 1);
+
 SELECT * FROM ene.dbo.usuario;
 
 SELECT u.idusuario AS "#", u.rut, CONCAT_WS(' ', u.nombres, u.apaterno, u.amaterno) AS "usuario", u.clave, p.nombrePerfil as "perfil"
