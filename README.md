@@ -12,4 +12,4 @@ Según la información entregada, se desea crear un sistema que tome requerimien
 
 ## Interfaces.
 ### Login (Ingreso)
-https://raw.githubusercontent.com/eduinformatica/ENE/ENE/Imagenes/frmLogin.PNG
+![Settings Window] (https://raw.github.com/eduinformatica/ENE/ENE/Imagenes/frmLogin.PNG)
