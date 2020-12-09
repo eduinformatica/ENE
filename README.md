@@ -11,5 +11,12 @@ Según la información entregada, se desea crear un sistema que tome requerimien
 -  Si yo soy responsable de un requerimiento o bien se me asigna uno, entonces debo ver dichos requerimientos (ya sea que hayan ingresado un requerimiento o hayan asignado a resolver)
 
 ## Interfaces.
-### Login (Ingreso)
+### Formulario **Ingreso (Login)**
 ![frmLogin](https://user-images.githubusercontent.com/51731637/101692971-bf39dd80-3a4f-11eb-92bb-44fb1fcd1c2c.PNG)
+
+### Formulario **Registro Requerimientos**
+![frmRegistroRequerimiento](https://user-images.githubusercontent.com/51731637/101693236-1770df80-3a50-11eb-9553-77eb1220e7f6.PNG)
+
+### Formulario **Listar Requerimientos**
+![frmListarRequerimientos](https://user-images.githubusercontent.com/51731637/101693578-982fdb80-3a50-11eb-91c5-8f675b4e670d.PNG)
+
