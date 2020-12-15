@@ -33,19 +33,15 @@ namespace ENE
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbxRequerimientos = new System.Windows.Forms.ComboBox();
+            this.cbxTipoRequerimientos = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txaDescripcionRequerimiento = new System.Windows.Forms.TextBox();
             this.cbxAsignacion = new System.Windows.Forms.ComboBox();
-            this.lblLineaForTitle = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxPrioridad = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnClearCampos = new System.Windows.Forms.Button();
             this.btnListRequerimiento = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +59,7 @@ namespace ENE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 86);
+            this.label2.Location = new System.Drawing.Point(47, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 16);
             this.label2.TabIndex = 1;
@@ -73,21 +69,22 @@ namespace ENE
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 141);
+            this.label3.Location = new System.Drawing.Point(47, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "Asignado a:";
             // 
-            // cbxRequerimientos
+            // cbxTipoRequerimientos
             // 
-            this.cbxRequerimientos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxRequerimientos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxRequerimientos.FormattingEnabled = true;
-            this.cbxRequerimientos.Location = new System.Drawing.Point(206, 85);
-            this.cbxRequerimientos.Name = "cbxRequerimientos";
-            this.cbxRequerimientos.Size = new System.Drawing.Size(212, 21);
-            this.cbxRequerimientos.TabIndex = 3;
+            this.cbxTipoRequerimientos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxTipoRequerimientos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoRequerimientos.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipoRequerimientos.FormattingEnabled = true;
+            this.cbxTipoRequerimientos.Location = new System.Drawing.Point(206, 85);
+            this.cbxTipoRequerimientos.Name = "cbxTipoRequerimientos";
+            this.cbxTipoRequerimientos.Size = new System.Drawing.Size(212, 24);
+            this.cbxTipoRequerimientos.TabIndex = 3;
             // 
             // label4
             // 
@@ -101,6 +98,7 @@ namespace ENE
             // 
             // txaDescripcionRequerimiento
             // 
+            this.txaDescripcionRequerimiento.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txaDescripcionRequerimiento.Location = new System.Drawing.Point(50, 225);
             this.txaDescripcionRequerimiento.Multiline = true;
             this.txaDescripcionRequerimiento.Name = "txaDescripcionRequerimiento";
@@ -111,26 +109,18 @@ namespace ENE
             // 
             this.cbxAsignacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxAsignacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAsignacion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxAsignacion.FormattingEnabled = true;
             this.cbxAsignacion.Location = new System.Drawing.Point(206, 139);
             this.cbxAsignacion.Name = "cbxAsignacion";
-            this.cbxAsignacion.Size = new System.Drawing.Size(212, 21);
+            this.cbxAsignacion.Size = new System.Drawing.Size(212, 24);
             this.cbxAsignacion.TabIndex = 6;
-            // 
-            // lblLineaForTitle
-            // 
-            this.lblLineaForTitle.AutoSize = true;
-            this.lblLineaForTitle.Location = new System.Drawing.Point(216, 48);
-            this.lblLineaForTitle.Name = "lblLineaForTitle";
-            this.lblLineaForTitle.Size = new System.Drawing.Size(175, 13);
-            this.lblLineaForTitle.TabIndex = 7;
-            this.lblLineaForTitle.Text = "--------------------------------------------------------";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 317);
+            this.label5.Location = new System.Drawing.Point(47, 328);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 14);
             this.label5.TabIndex = 8;
@@ -140,10 +130,11 @@ namespace ENE
             // 
             this.cbxPrioridad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPrioridad.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPrioridad.FormattingEnabled = true;
-            this.cbxPrioridad.Location = new System.Drawing.Point(206, 315);
+            this.cbxPrioridad.Location = new System.Drawing.Point(206, 324);
             this.cbxPrioridad.Name = "cbxPrioridad";
-            this.cbxPrioridad.Size = new System.Drawing.Size(212, 21);
+            this.cbxPrioridad.Size = new System.Drawing.Size(212, 24);
             this.cbxPrioridad.TabIndex = 9;
             // 
             // btnGuardar
@@ -156,6 +147,7 @@ namespace ENE
             this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnClearCampos
             // 
@@ -167,6 +159,7 @@ namespace ENE
             this.btnClearCampos.TabIndex = 11;
             this.btnClearCampos.Text = "Limpiar Campos";
             this.btnClearCampos.UseVisualStyleBackColor = true;
+            this.btnClearCampos.Click += new System.EventHandler(this.btnClearCampos_Click);
             // 
             // btnListRequerimiento
             // 
@@ -180,51 +173,20 @@ namespace ENE
             this.btnListRequerimiento.UseVisualStyleBackColor = true;
             this.btnListRequerimiento.Click += new System.EventHandler(this.btnListRequerimiento_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(203, 109);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "(Base de Datos, Sistemas, Servidores)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(203, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(297, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "(Este usuario sera el responsable de resolver el requerimiento)";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(203, 339);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "(Alta, Media, Baja)";
-            // 
             // RegistroRequerimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 424);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnListRequerimiento);
             this.Controls.Add(this.btnClearCampos);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cbxPrioridad);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblLineaForTitle);
             this.Controls.Add(this.cbxAsignacion);
             this.Controls.Add(this.txaDescripcionRequerimiento);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbxRequerimientos);
+            this.Controls.Add(this.cbxTipoRequerimientos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -233,6 +195,7 @@ namespace ENE
             this.Name = "RegistroRequerimiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro Requerimientos";
+            this.Load += new System.EventHandler(this.RegistroRequerimiento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,18 +206,14 @@ namespace ENE
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbxRequerimientos;
+        private System.Windows.Forms.ComboBox cbxTipoRequerimientos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txaDescripcionRequerimiento;
         private System.Windows.Forms.ComboBox cbxAsignacion;
-        private System.Windows.Forms.Label lblLineaForTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxPrioridad;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnClearCampos;
         private System.Windows.Forms.Button btnListRequerimiento;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
     }
 }

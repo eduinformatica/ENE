@@ -97,7 +97,8 @@ namespace CapaNegocio
                 }
                 else
                 {
-                    MessageBox.Show("Error DG-02, No existen argumentos a enviar", "!Aviso ENE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //Este mensaje sale cuando iniciamos session en si, siendo que llama al procedimiento almacencado
+                    //MessageBox.Show("Error DG-02, No existen argumentos a enviar", "!Aviso ENE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 dataAdapter.Fill(dt);
             }

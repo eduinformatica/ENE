@@ -39,11 +39,10 @@ namespace ENE
                     txtPassword.Clear();
                 }
                 else {
-                    //RegistroRequerimiento registroRequerimiento = new RegistroRequerimiento(variables[1], variables[2]);
-                    RegistroRequerimiento registroRequerimiento = new RegistroRequerimiento();
-                    MessageBox.Show("Bienvenido Sr(a) "+ variables[0], "ENE - Rubro Sanitario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    registroRequerimiento.ShowDialog();
+                    MessageBox.Show("Bienvenido Sr(a) " + variables[0], "ENE - Rubro Sanitario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
+                    RegistroRequerimiento registroRequerimiento = new RegistroRequerimiento(variables[1], variables[2]);
+                    registroRequerimiento.ShowDialog();
                 }
             }
             else

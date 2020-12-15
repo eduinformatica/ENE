@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaNegocio;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CapaLogica
 {
@@ -54,6 +55,21 @@ namespace CapaLogica
                 return vMessage;
             }
 
+        }
+
+
+        public DataTable ListUsuarios(int idusuario = 0) {
+            List<Parametros> lst = new List<Parametros>();
+
+            try
+            {
+                lst.Add(new Parametros("@idusuario", idusuario));
+                return manejador.ListShow("ListarUsuarios", lst);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         #endregion
     }

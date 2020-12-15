@@ -35,7 +35,6 @@
             this.txtRut = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.lblLineaForTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitleAutentificacion
@@ -101,19 +100,9 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // lblLineaForTitle
-            // 
-            this.lblLineaForTitle.AutoSize = true;
-            this.lblLineaForTitle.Location = new System.Drawing.Point(82, 49);
-            this.lblLineaForTitle.Name = "lblLineaForTitle";
-            this.lblLineaForTitle.Size = new System.Drawing.Size(175, 13);
-            this.lblLineaForTitle.TabIndex = 6;
-            this.lblLineaForTitle.Text = "--------------------------------------------------------";
-            // 
             // Login
             // 
             this.ClientSize = new System.Drawing.Size(342, 208);
-            this.Controls.Add(this.lblLineaForTitle);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtRut);
@@ -140,7 +129,6 @@
         private System.Windows.Forms.TextBox txtRut;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Label lblLineaForTitle;
     }
 }
 

@@ -40,15 +40,10 @@ namespace ENE
             this.label5 = new System.Windows.Forms.Label();
             this.chckBoxResueltos = new System.Windows.Forms.CheckBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgDetalleRequerimientos = new System.Windows.Forms.DataGridView();
             this.btnCheckResuelto = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.lblLineaForTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDetalleRequerimientos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +60,7 @@ namespace ENE
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(24, 83);
+            this.label2.Location = new System.Drawing.Point(24, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 16);
             this.label2.TabIndex = 1;
@@ -75,7 +70,7 @@ namespace ENE
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(24, 117);
+            this.label3.Location = new System.Drawing.Point(24, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 16);
             this.label3.TabIndex = 2;
@@ -95,26 +90,29 @@ namespace ENE
             // 
             this.cbxReadRequerimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxReadRequerimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxReadRequerimiento.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxReadRequerimiento.FormattingEnabled = true;
             this.cbxReadRequerimiento.Location = new System.Drawing.Point(198, 82);
             this.cbxReadRequerimiento.Name = "cbxReadRequerimiento";
-            this.cbxReadRequerimiento.Size = new System.Drawing.Size(245, 21);
+            this.cbxReadRequerimiento.Size = new System.Drawing.Size(245, 24);
             this.cbxReadRequerimiento.TabIndex = 4;
             // 
             // cbxReadPrioridad
             // 
             this.cbxReadPrioridad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxReadPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxReadPrioridad.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxReadPrioridad.FormattingEnabled = true;
             this.cbxReadPrioridad.Location = new System.Drawing.Point(198, 116);
             this.cbxReadPrioridad.Name = "cbxReadPrioridad";
-            this.cbxReadPrioridad.Size = new System.Drawing.Size(245, 21);
+            this.cbxReadPrioridad.Size = new System.Drawing.Size(245, 24);
             this.cbxReadPrioridad.TabIndex = 5;
             // 
             // chckBoxPendientes
             // 
             this.chckBoxPendientes.AutoSize = true;
             this.chckBoxPendientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chckBoxPendientes.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckBoxPendientes.Location = new System.Drawing.Point(198, 157);
             this.chckBoxPendientes.Name = "chckBoxPendientes";
             this.chckBoxPendientes.Size = new System.Drawing.Size(15, 14);
@@ -125,7 +123,7 @@ namespace ENE
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(287, 155);
+            this.label5.Location = new System.Drawing.Point(287, 157);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 7;
@@ -135,7 +133,7 @@ namespace ENE
             // 
             this.chckBoxResueltos.AutoSize = true;
             this.chckBoxResueltos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chckBoxResueltos.Location = new System.Drawing.Point(388, 156);
+            this.chckBoxResueltos.Location = new System.Drawing.Point(385, 159);
             this.chckBoxResueltos.Name = "chckBoxResueltos";
             this.chckBoxResueltos.Size = new System.Drawing.Size(15, 14);
             this.chckBoxResueltos.TabIndex = 8;
@@ -152,45 +150,16 @@ namespace ENE
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgDetalleRequerimientos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 133);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tipo Requerimiento";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Prioridad";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Descripción";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Días Plazo";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.dgDetalleRequerimientos.AllowUserToAddRows = false;
+            this.dgDetalleRequerimientos.AllowUserToDeleteRows = false;
+            this.dgDetalleRequerimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDetalleRequerimientos.Location = new System.Drawing.Point(27, 202);
+            this.dgDetalleRequerimientos.Name = "dgDetalleRequerimientos";
+            this.dgDetalleRequerimientos.ReadOnly = true;
+            this.dgDetalleRequerimientos.Size = new System.Drawing.Size(603, 152);
+            this.dgDetalleRequerimientos.TabIndex = 10;
             // 
             // btnCheckResuelto
             // 
@@ -213,25 +182,16 @@ namespace ENE
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // lblLineaForTitle
-            // 
-            this.lblLineaForTitle.AutoSize = true;
-            this.lblLineaForTitle.Location = new System.Drawing.Point(245, 44);
-            this.lblLineaForTitle.Name = "lblLineaForTitle";
-            this.lblLineaForTitle.Size = new System.Drawing.Size(175, 13);
-            this.lblLineaForTitle.TabIndex = 13;
-            this.lblLineaForTitle.Text = "--------------------------------------------------------";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // ListaDeRequerimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 400);
-            this.Controls.Add(this.lblLineaForTitle);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCheckResuelto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgDetalleRequerimientos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.chckBoxResueltos);
             this.Controls.Add(this.label5);
@@ -246,7 +206,8 @@ namespace ENE
             this.Name = "ListaDeRequerimientos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lista Requerimientos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ListaDeRequerimientos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDetalleRequerimientos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,13 +225,8 @@ namespace ENE
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox chckBoxResueltos;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridView dgDetalleRequerimientos;
         private System.Windows.Forms.Button btnCheckResuelto;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label lblLineaForTitle;
     }
 }

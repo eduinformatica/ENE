@@ -20,14 +20,14 @@ IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='perfil')
 GO
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='prioridad')
-	CREATE TABLE prioridad(idprioridad INT IDENTITY(1,1) NOT NULL,
+	CREATE TABLE prioridad(idprioridad INT IDENTITY(0,1) NOT NULL,
 		nombrePrioridad VARCHAR(20) NOT NULL,
 		CONSTRAINT pk_idprioridad PRIMARY KEY(idprioridad)
 	);
 GO
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='tipoRequerimiento')
-	CREATE TABLE tipoRequerimiento(idtipoRequerimiento INT IDENTITY(1,1) NOT NULL,
+	CREATE TABLE tipoRequerimiento(idtipoRequerimiento INT IDENTITY(0,1) NOT NULL,
 		nombre VARCHAR(100) NOT NULL,
 		CONSTRAINT pk_idtipoRequerimiento PRIMARY KEY(idtipoRequerimiento)
 	);
@@ -41,7 +41,7 @@ IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='estado')
 GO
 
 IF NOT EXISTS(SELECT * FROM sysobjects WHERE name='usuario')
-	CREATE TABLE usuario(idusuario INT IDENTITY(1,1) NOT NULL,
+	CREATE TABLE usuario(idusuario INT IDENTITY(0,1) NOT NULL,
 		rut VARCHAR(20) NOT NULL UNIQUE,
 		nombres VARCHAR(30) NOT NULL,
 		apaterno VARCHAR(30) NOT NULL,
@@ -77,19 +77,24 @@ GO
 INSERT INTO dbo.perfil(nombrePerfil) VALUES('Administrador'),('Usuario');
 SELECT * FROM ene.dbo.perfil;
 
-INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('Alta'),('Media'),('Baja');
+INSERT INTO dbo.prioridad(nombrePrioridad) VALUES('Seleccionar'),('Alta'),('Media'),('Baja');
 SELECT * FROM ene.dbo.prioridad;
 
 INSERT INTO dbo.tipoRequerimiento(nombre)
-	VALUES('Base de Datos'), ('Sistemas'), ('Servidores'), ('Contabilidad'), ('Redes');
+	VALUES('Seleccionar'),('Base de Datos'), ('Sistemas'), ('Servidores'), ('Contabilidad'), ('Redes');
 SELECT * FROM ene.dbo.tipoRequerimiento;
+
 
 INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
 	VALUES('18533984K', 'Daniel', 'Gomez', 'Gomez', CONVERT(VARBINARY, 'daniel93'), 2);
 INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
 	VALUES('79771856', 'Victor', 'Sanchez', 'Hugo', CONVERT(VARBINARY, 'vitoco93'), 1);
-
+INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
+	VALUES('11111111', 'PRUEBA', 'PRUEBA', 'PRUEBA', CONVERT(VARBINARY, 'test'), 1);
+INSERT INTO dbo.usuario(rut, nombres, apaterno, amaterno, clave, perfil_idperfil)
+	VALUES('22222222', 'Informatica', 'Prueba', 'Prueba', CONVERT(VARBINARY, 'test'), 2);
 SELECT * FROM ene.dbo.usuario;
+
 
 SELECT u.idusuario AS "#", u.rut, CONCAT_WS(' ', u.nombres, u.apaterno, u.amaterno) AS "usuario", u.clave, p.nombrePerfil as "perfil"
 FROM ene.dbo.usuario u
@@ -128,3 +133,145 @@ ORDER BY u.nombres ASC;
 --END 
 --sp_helptext SesionInit 
 execute SesionInit '79771856','vitoco93','','','';
+
+
+--CREATE PROCEDURE ListarPrioridad
+--AS
+--BEGIN
+--	SELECT * FROM prioridad p
+--END
+execute ListarPrioridad;
+
+
+--CREATE PROCEDURE TipoRequerimiento
+--AS
+--BEGIN
+--	SELECT * FROM tipoRequerimiento tp
+--END
+execute TipoRequerimiento;
+
+
+--CREATE PROCEDURE ListarUsuarios(@idusuario int = null)
+--AS
+--BEGIN
+--	SELECT u.idusuario AS 'id', CONCAT_WS(' ', u.nombres, u.apaterno, u.amaterno) AS 'usuarios', u.rut, u.perfil_idperfil, u.clave
+--	FROM usuario u
+--	WHERE u.idusuario <> @idusuario
+--END
+--sp_helptext ListarUsuarios
+
+
+--CREATE PROCEDURE UpdateStatuRequerimiento (@id int, @mensaje VARCHAR(100) OUT)
+--AS
+--BEGIN 
+--	UPDATE ene.dbo.requerimiento 
+--	SET estado_idestado = 2
+--	WHERE idrequerimiento = @id
+--	SET @mensaje = 'Estado requerimiento modificado con exito'
+--END
+
+
+--CREATE PROCEDURE DeleteRequerimiento (@id int, @mensaje VARCHAR(100) OUT)
+--AS
+--BEGIN
+--	DELETE FROM requerimiento
+--	WHERE idrequerimiento = @id
+--	SET @mensaje = 'Requerimiento eliminado con exito';
+--END
+
+
+--CREATE PROCEDURE ListRequest (@idusuario int = null) -- listar requerimientos
+--AS
+--BEGIN
+--	SELECT r.idrequerimiento, tp.idtipoRequerimiento AS 'Tipo de Requerimiento', p.nombrePrioridad 'Prioridad', r.descripcion 'Descripcion',
+--		DATEDIFF(DAY, r.fechaRequerimiento, r.fechaPlazo) AS 'Dias de plazo'
+--	FROM requerimiento r, tipoRequerimiento tp, prioridad p
+--	WHERE r.tipoRequerimiento_idtipoRequerimiento = tp.idtipoRequerimiento
+--	AND r.prioridad_idprioridad = p.idprioridad
+--	OR r.usuarioAsignante = @idusuario OR r.usuarioAsignado = @idusuario
+--END
+
+
+CREATE PROCEDURE RegistrarRequerimiento ( -- No me deja ejecutar este procedimiento almacenado
+	@fechaRequerimiento DATE,
+	@usuarioAsignante INT,
+	@usuarioAsignado INT,
+	@prioridad_idprioridad INT,
+	@tipoRequerimiento_idtipoRequerimiento INT,
+	@estado INT,
+	@descripcion VARCHAR(MAX),
+	@sms VARCHAR(100) OUT
+)
+AS
+BEGIN
+	INSERT INTO requerimiento
+	VALUES(@fechaRequerimiento, @descripcion, null, @prioridad_idprioridad, @usuarioAsignante, @usuarioAsignado,
+	@estado, @tipoRequerimiento_idtipoRequerimiento)
+	
+	IF @prioridad_idprioridad = 1
+	BEGIN
+		SET @sms = CONVERT(VARCHAR(15),DATEADD(DAY,3,@fechaRequerimiento),3)
+		UPDATE requerimiento 
+		SET fechaPlazo = CONVERT(date, @sms,3)
+		WHERE idrequerimiento = (SELECT isnull(MAX(idrequerimiento),1) FROM requerimiento)
+	END
+	ELSE IF @prioridad_idprioridad = 2
+	BEGIN
+		SET @sms = CONVERT(VARCHAR(15),DATEADD(DAY,4,@fechaRequerimiento),3)
+		UPDATE requerimiento 
+		SET fechaPlazo = CONVERT(date, @sms,3)
+		WHERE idrequerimiento = (SELECT isnull(MAX(idrequerimiento),1) FROM requerimiento)
+	END
+	ELSE IF @prioridad_idprioridad = 3
+	BEGIN
+		SET @sms = CONVERT(VARCHAR(15),DATEADD(DAY,5,@fechaRequerimiento),3)
+		UPDATE requerimiento 
+		SET fechaPlazo = CONVERT(date, @sms,3)
+		WHERE idrequerimiento = (SELECT isnull(MAX(idrequerimiento),1) FROM requerimiento)
+	END
+END
+
+
+
+
+
+
+-- Para el nacho
+CREATE PROCEDURE RegistrarRequerimiento ( -- No me deja ejecutar este procedimiento almacenado
+	@fechaRequerimiento DATE,
+	@usuarioAsignante INT,
+	@usuarioAsignado INT,
+	@prioridad_idprioridad INT,
+	@tipoRequerimiento_idtipoRequerimiento INT,
+	@estado INT,
+	@descripcion VARCHAR(MAX),
+	@sms VARCHAR(100) OUT
+)
+AS
+BEGIN
+	INSERT INTO requerimiento
+	VALUES(@fechaRequerimiento, @descripcion, null, @prioridad_idprioridad, @usuarioAsignante, @usuarioAsignado,
+	@estado, @tipoRequerimiento_idtipoRequerimiento)
+	
+	IF @prioridad_idprioridad = 1
+	BEGIN
+		SET @sms = CONVERT(VARCHAR(15),DATEADD(DAY,3,@fechaRequerimiento),3)
+		UPDATE requerimiento 
+		SET fechaPlazo = CONVERT(date, @sms,3)
+		WHERE idrequerimiento = (SELECT isnull(MAX(idrequerimiento),1) FROM requerimiento)
+	END
+	ELSE IF @prioridad_idprioridad = 2
+	BEGIN
+		SET @sms = CONVERT(VARCHAR(15),DATEADD(DAY,4,@fechaRequerimiento),3)
+		UPDATE requerimiento 
+		SET fechaPlazo = CONVERT(date, @sms,3)
+		WHERE idrequerimiento = (SELECT isnull(MAX(idrequerimiento),1) FROM requerimiento)
+	END
+	ELSE IF @prioridad_idprioridad = 3
+	BEGIN
+		SET @sms = CONVERT(VARCHAR(15),DATEADD(DAY,5,@fechaRequerimiento),3)
+		UPDATE requerimiento 
+		SET fechaPlazo = CONVERT(date, @sms,3)
+		WHERE idrequerimiento = (SELECT isnull(MAX(idrequerimiento),1) FROM requerimiento)
+	END
+END
